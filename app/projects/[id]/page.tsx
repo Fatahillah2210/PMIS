@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import CreateTeamModal from "@/components/CreateTeamModal";
 
 type PageProps = {
   params: Promise<{
@@ -64,9 +65,7 @@ export default async function ProjectPage({ params }: PageProps) {
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Project PIC</h2>
 
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
-            + Add PIC
-          </button>
+          <CreateTeamModal projectId={id} />
         </div>
 
         {pics?.length === 0 && <p className="text-gray-500">Belum ada PIC.</p>}
